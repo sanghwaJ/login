@@ -19,6 +19,7 @@ public class LogFilter implements Filter {
         HttpServletRequest httpRequest = (HttpServletRequest) request;
         String requestURI = httpRequest.getRequestURI();
         String uuid = UUID.randomUUID().toString();
+
         try {
             log.info("REQUEST  [{}][{}]", uuid, requestURI);
             chain.doFilter(request, response);
